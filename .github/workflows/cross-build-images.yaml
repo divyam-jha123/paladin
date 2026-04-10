@@ -56,6 +56,15 @@ jobs:
       username: ${{ secrets.username }}
       password: ${{ secrets.password }}
 
+  core-macos-arm-native:
+    needs: set-repository
+    runs-on: macos-14-arm64
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image (native ARM)
+        run: |
+          docker build -t test-macos-arm -f ./Dockerfile .
+
   core-ubuntu:
     needs: set-repository
     uses: ./.github/workflows/build-image.yaml
