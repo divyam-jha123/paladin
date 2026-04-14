@@ -58,12 +58,20 @@ jobs:
 
   core-macos-arm-native:
     needs: set-repository
-    runs-on: macos-14-arm64
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build Docker image (native ARM)
-        run: |
-          docker build -t test-macos-arm -f ./Dockerfile .
+    continue-on-error: true
+    uses: ./.github/workflows/build-image.yaml
+    with:
+      dockerfile: ./Dockerfile
+      registry: ${{ inputs.registry }}
+      image: ${{ needs.set-repository.outputs.repository }}/paladin
+      # This image is intentionally not consumed by the RC flow (different tag than `*-arm64`).
+      image_tag: "${{ github.sha }}-arm64-native"
+      push: ${{ inputs.push }}
+      platforms: linux/arm64
+      runs-on: macos-14-arm64
+    secrets:
+      username: ${{ secrets.username }}
+      password: ${{ secrets.password }}
 
   core-ubuntu:
     needs: set-repository

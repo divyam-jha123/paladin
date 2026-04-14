@@ -61,6 +61,7 @@ jobs:
           submodules: recursive
 
       - name: Free up disk space on runner
+        if: ${{ runner.os == 'Linux' }}
         uses: ./.github/actions/free-up-disk-space
 
       - name: Print inputs
@@ -73,9 +74,11 @@ jobs:
           echo "platforms: ${{ inputs.platforms }}"
 
       - name: Free up disk space on runner
+        if: ${{ runner.os == 'Linux' }}
         uses: ./.github/actions/free-up-disk-space
 
       - name: Set up QEMU
+        if: ${{ runner.os == 'Linux' }}
         uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
