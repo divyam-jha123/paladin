@@ -58,7 +58,6 @@ jobs:
 
   core-macos-arm-native:
     needs: set-repository
-    continue-on-error: true
     uses: ./.github/workflows/build-image.yaml
     with:
       dockerfile: ./Dockerfile
@@ -69,6 +68,7 @@ jobs:
       push: ${{ inputs.push }}
       platforms: linux/arm64
       runs-on: macos-14-arm64
+      continue-on-error: true
     secrets:
       username: ${{ secrets.username }}
       password: ${{ secrets.password }}
