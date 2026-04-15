@@ -4,6 +4,18 @@ permissions:
   contents: read
 
 on:
+  pull_request:
+    paths:
+      - .github/workflows/compare-image-build-times.yaml
+      - Dockerfile
+      - operator/Dockerfile
+  push:
+    branches:
+      - feat/macos-arm-native-build
+    paths:
+      - .github/workflows/compare-image-build-times.yaml
+      - Dockerfile
+      - operator/Dockerfile
   workflow_dispatch:
 
 concurrency:
