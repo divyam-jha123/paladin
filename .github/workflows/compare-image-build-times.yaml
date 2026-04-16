@@ -37,16 +37,16 @@ jobs:
             runner_label: ubuntu-latest
           - image: paladin
             dockerfile: ./Dockerfile
-            runner: macos-latest-large
-            runner_label: macos-latest-large
+            runner: macos-15-intel
+            runner_label: macos-15-intel
           - image: paladin-operator
             dockerfile: ./operator/Dockerfile
             runner: ubuntu-latest
             runner_label: ubuntu-latest
           - image: paladin-operator
             dockerfile: ./operator/Dockerfile
-            runner: macos-latest-large
-            runner_label: macos-latest-large
+            runner: macos-15-intel
+            runner_label: macos-15-intel
 
     steps:
       - name: Checkout code
@@ -59,15 +59,14 @@ jobs:
         if: ${{ runner.os == 'Linux' }}
         uses: ./.github/actions/free-up-disk-space
 
-      - name: Set up QEMU
-        if: ${{ runner.os == 'Linux' }}
-        uses: docker/setup-qemu-action@v3
-
       - name: Set up Docker
         if: ${{ runner.os == 'macOS' }}
         uses: docker/setup-docker-action@v5
         with:
           set-host: true
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
         id: buildx
