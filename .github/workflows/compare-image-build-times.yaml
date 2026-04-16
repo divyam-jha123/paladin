@@ -11,7 +11,7 @@ on:
       - operator/Dockerfile
   push:
     branches:
-      - feat/macos-arm-native-build
+      - temp-testing
     paths:
       - .github/workflows/compare-image-build-times.yaml
       - Dockerfile
