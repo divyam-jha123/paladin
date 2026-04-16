@@ -37,16 +37,16 @@ jobs:
             runner_label: ubuntu-latest
           - image: paladin
             dockerfile: ./Dockerfile
-            runner: macos-14-arm64
-            runner_label: macos-14-arm64
+            runner: macos-latest
+            runner_label: macos
           - image: paladin-operator
             dockerfile: ./operator/Dockerfile
             runner: ubuntu-latest
             runner_label: ubuntu-latest
           - image: paladin-operator
             dockerfile: ./operator/Dockerfile
-            runner: macos-14-arm64
-            runner_label: macos-14-arm64
+            runner: macos-latest
+            runner_label: macos
 
     steps:
       - name: Checkout code
