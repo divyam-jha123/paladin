@@ -37,7 +37,7 @@ jobs:
             runner_label: ubuntu-latest
           - image: paladin
             dockerfile: ./Dockerfile
-            runner: macos-latest
+            runner: macos-14-arm64
             runner_label: macos
           - image: paladin-operator
             dockerfile: ./operator/Dockerfile
@@ -45,7 +45,7 @@ jobs:
             runner_label: ubuntu-latest
           - image: paladin-operator
             dockerfile: ./operator/Dockerfile
-            runner: macos-latest
+            runner: macos-14-arm64
             runner_label: macos
 
     steps:
@@ -66,6 +66,7 @@ jobs:
           set-host: true
 
       - name: Set up QEMU
+        if: runner.os == 'Linux' # Only needed for Intel Linux to build ARM
         uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx
