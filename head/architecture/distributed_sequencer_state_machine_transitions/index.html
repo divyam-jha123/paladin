@@ -5,11 +5,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../advanced_crypto/" rel="prev"/>
-<link href="../full_stack/" rel="next"/>
 <link href="../../assets/paladin-icon-light.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.5.44" name="generator"/>
-<title>Atomic EVM Programmability - Paladin</title>
+<title>State machine transition detail - Paladin</title>
 <link href="../../assets/stylesheets/main.0253249f.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -25,7 +23,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#the-power-of-the-evm-sandwich">
+<a class="md-skip" href="#state-machine-transition-detail">
           Skip to content
         </a>
 </div>
@@ -110,7 +108,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Atomic EVM Programmability
+              State machine transition detail
             
           </span>
 </div>
@@ -145,7 +143,7 @@
 <nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
 <div class="md-grid">
 <ul class="md-tabs__list">
-<li class="md-tabs__item md-tabs__item--active">
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../..">
           
   
@@ -156,7 +154,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../architecture/overview/">
+<a class="md-tabs__link" href="../overview/">
           
   
     
@@ -286,97 +284,61 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__container">
 <a class="md-nav__link" href="../..">
 <span class="md-ellipsis">
     Introduction
   </span>
 </a>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
             Introduction
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../tokens/">
+<a class="md-nav__link" href="../../concepts/tokens/">
 <span class="md-ellipsis">
     Privacy Preserving Tokens
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../private_evm/">
+<a class="md-nav__link" href="../../concepts/private_evm/">
 <span class="md-ellipsis">
     Private EVM Smart Contracts
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../advanced_crypto/">
+<a class="md-nav__link" href="../../concepts/advanced_crypto/">
 <span class="md-ellipsis">
     Advanced Cryptography
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
-    Atomic EVM Programmability
-  </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../concepts/atomic_programmability/">
 <span class="md-ellipsis">
     Atomic EVM Programmability
   </span>
 </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#the-power-of-the-evm-sandwich">
-<span class="md-ellipsis">
-      The power of the EVM sandwich
-    </span>
-</a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ecosystem-programmability">
-<span class="md-ellipsis">
-      Ecosystem programmability
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#wheres-the-catch">
-<span class="md-ellipsis">
-      Where's the catch?
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../full_stack/">
+<a class="md-nav__link" href="../../concepts/full_stack/">
 <span class="md-ellipsis">
     Full Enterprise Privacy Stack
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cloud_native/">
+<a class="md-nav__link" href="../../concepts/cloud_native/">
 <span class="md-ellipsis">
     Cloud Native Runtime
   </span>
@@ -400,77 +362,77 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/overview/">
+<a class="md-nav__link" href="../overview/">
 <span class="md-ellipsis">
     Overview
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/programming_model/">
+<a class="md-nav__link" href="../programming_model/">
 <span class="md-ellipsis">
     Programming model
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/domains/">
+<a class="md-nav__link" href="../domains/">
 <span class="md-ellipsis">
     Domains
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/zeto/">
+<a class="md-nav__link" href="../zeto/">
 <span class="md-ellipsis">
     Zeto - ZKP Tokens
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/noto/">
+<a class="md-nav__link" href="../noto/">
 <span class="md-ellipsis">
     Noto - Notarized Tokens
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/pente/">
+<a class="md-nav__link" href="../pente/">
 <span class="md-ellipsis">
     Pente - EVM Privacy Groups
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/key_management/">
+<a class="md-nav__link" href="../key_management/">
 <span class="md-ellipsis">
     Key management
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/state_store/">
+<a class="md-nav__link" href="../state_store/">
 <span class="md-ellipsis">
     State store
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/atomic_interop/">
+<a class="md-nav__link" href="../atomic_interop/">
 <span class="md-ellipsis">
     Atomic interop
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/data_and_registry/">
+<a class="md-nav__link" href="../data_and_registry/">
 <span class="md-ellipsis">
     Data Transports &amp; Registry
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/ledger_layers/">
+<a class="md-nav__link" href="../ledger_layers/">
 <span class="md-ellipsis">
     Ledger Layers
   </span>
@@ -491,49 +453,49 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/distributed_sequencer_overview/">
+<a class="md-nav__link" href="../distributed_sequencer_overview/">
 <span class="md-ellipsis">
     Overview
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/distributed_sequencer_architecture/">
+<a class="md-nav__link" href="../distributed_sequencer_architecture/">
 <span class="md-ellipsis">
     Architecture
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/distributed_sequencer_components/">
+<a class="md-nav__link" href="../distributed_sequencer_components/">
 <span class="md-ellipsis">
     Components
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/distributed_sequencer_state_machine/">
+<a class="md-nav__link" href="../distributed_sequencer_state_machine/">
 <span class="md-ellipsis">
     State Machine
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/distributed_sequencer_data_flows/">
+<a class="md-nav__link" href="../distributed_sequencer_data_flows/">
 <span class="md-ellipsis">
     Data Flows
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/distributed_sequencer_dependency_handling/">
+<a class="md-nav__link" href="../distributed_sequencer_dependency_handling/">
 <span class="md-ellipsis">
     Dependency Handling
   </span>
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../architecture/distributed_sequencer_protocol/">
+<a class="md-nav__link" href="../distributed_sequencer_protocol/">
 <span class="md-ellipsis">
     Protocol
   </span>
@@ -1347,25 +1309,76 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#the-power-of-the-evm-sandwich">
+<a class="md-nav__link" href="#coordinator-state-machine">
 <span class="md-ellipsis">
-      The power of the EVM sandwich
+      Coordinator State Machine
+    </span>
+</a>
+<nav aria-label="Coordinator State Machine" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transition-events">
+<span class="md-ellipsis">
+      Transition Events
     </span>
 </a>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#ecosystem-programmability">
+<a class="md-nav__link" href="#coordinator-transaction-state-machine">
 <span class="md-ellipsis">
-      Ecosystem programmability
+      Coordinator Transaction State Machine
+    </span>
+</a>
+<nav aria-label="Coordinator Transaction State Machine" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transition-events_1">
+<span class="md-ellipsis">
+      Transition Events
     </span>
 </a>
 </li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#wheres-the-catch">
+<a class="md-nav__link" href="#originator-state-machine">
 <span class="md-ellipsis">
-      Where's the catch?
+      Originator State Machine
     </span>
 </a>
+<nav aria-label="Originator State Machine" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transition-events_2">
+<span class="md-ellipsis">
+      Transition Events
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#originator-transaction-state-machine">
+<span class="md-ellipsis">
+      Originator Transaction State Machine
+    </span>
+</a>
+<nav aria-label="Originator Transaction State Machine" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transition-events_3">
+<span class="md-ellipsis">
+      Transition Events
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -1374,96 +1387,474 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Atomic EVM Programmability</h1>
-<p><img alt="Atomic Interop" src="../../images/atomic_interop.svg"/></p>
-<p>One of the questions asked about the Paladin project is "Why EVM?"</p>
-<p>We've discussed that a lot of technologies used in Paladin add layers of state management and advanced cryptography that diverge from the traditional programming paradigms of ERC-20 and ERC-721 contracts.</p>
-<p>Is it "just" the vibrancy of the EVM developer community and ecosystem? Or is there something unique about the programmable nature of the EVM ledger itself that is transformational in the solution, compared to using a bespoke DLT at the base?</p>
-<h2 id="the-power-of-the-evm-sandwich">The power of the EVM sandwich<a class="headerlink" href="#the-power-of-the-evm-sandwich" title="Permanent link">¶</a></h2>
-<p>Let's zoom out an look at a use case, and see how it's made possible by the fact that there is a fully programmable EVM at both the bottom (fully open and decentralized) end, and the top (fully private and isolated) ends of the stack.</p>
-<p>In the diagram above, we see the use of three different technologies, developed independently by three different sets of developers working atomically together:</p>
-<ol>
-<li>An issuer-backed asset being transferred from User1 to User2<ul>
-<li>For example a bond or other regulated security</li>
-</ul>
-</li>
-<li>A fully decentralized ZKP-backed cash token being transferred from User2 to User1<ul>
-<li>For example some CBDC coins</li>
-</ul>
-</li>
-<li>An arbitrarily complex multi-step piece of logic being executed between User1 and User2<ul>
-<li>For example a DvP flow agreeing and settling a trade</li>
-</ul>
-</li>
-</ol>
-<p>Each of these three smart contracts is backed by an on-chain EVM smart contract on the base ledger. As a result, the EVM can be used to orchestrate a <em>single atomic transaction</em> across all three contracts.</p>
-<h2 id="ecosystem-programmability">Ecosystem programmability<a class="headerlink" href="#ecosystem-programmability" title="Permanent link">¶</a></h2>
-<p>Even more important than the fact this atomicity is possible, is the fact that the development of the use case was decentralized in nature.</p>
-<ul>
-<li>The asset issuer built and issued their token<ul>
-<li>The did not need to know the private details of the trade</li>
-<li>They still ensured the rules of their token were obeyed </li>
-</ul>
-</li>
-<li>The cash issuer built their currency<ul>
-<li>They were not even involved in the trade - the ZKP enforced trading rules via proof</li>
-</ul>
-</li>
-<li>The users used a smart contract to settle their trade<ul>
-<li>Likely supported by an EVM innovator in the ecosystem</li>
-</ul>
-</li>
-</ul>
-<p>This ecosystem programmability is the true power of EVM, and the recipe for its success in fostering adoption of Web3 in the public community.</p>
-<h2 id="wheres-the-catch">Where's the catch?<a class="headerlink" href="#wheres-the-catch" title="Permanent link">¶</a></h2>
-<p>As with any Web3 swap, there are a couple of important pre-requisites to make this possible:</p>
-<ul>
-<li>Standard interfaces that support programmability<ul>
-<li>The ability to obtain a pre-approval for a transaction from a notary</li>
-<li>The ability to lock a proof for conditional execution</li>
-<li>The ability to trigger a base ledger transaction from an EVM Privacy Group</li>
-</ul>
-</li>
-<li>Multiple transactions are required to setup the trade for execution<ul>
-<li>True for most atomic swap operations in practice</li>
-<li>Does not change the fact the final execution is a single atomic transaction</li>
-</ul>
-</li>
-</ul>
+<h1 id="state-machine-transition-detail">State machine transition detail<a class="headerlink" href="#state-machine-transition-detail" title="Permanent link">¶</a></h1>
+<p>Detailed state diagrams showing every transition event and guard condition for each of the four distributed sequencer state machines.</p>
+<p><em>Auto-generated from source</em></p>
+<h2 id="coordinator-state-machine">Coordinator State Machine<a class="headerlink" href="#coordinator-state-machine" title="Permanent link">¶</a></h2>
+<div class="panzoom-box" data-key="alt" id="panzoom0" oncontextmenu="return false;"><nav class="panzoom-top-nav"><button class="panzoom-info panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3l58.3 0c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24l0-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1l-58.3 0c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></button><button class="panzoom-reset panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"></path></svg></button><button class="panzoom-max panzoom-button"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z"></path></svg></button><button class="panzoom-min panzoom-button panzoom-hidden"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 320c-17.7 0-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0z"></path></svg></button></nav><pre class="mermaid"><code>%%{init: {'themeVariables': {'background': 'transparent'}}}%%
+stateDiagram-v2
+    direction LR
+    state "Active Flush" as Active_Flush
+    state "Closing Flush" as Closing_Flush
+    [*] --&gt; Initial
+    Initial --&gt; Idle : CoordinatorCreated
+    Idle --&gt; Observing : HeartbeatReceived
+    Idle --&gt; Observing : EndorsementRequestReceived
+    Idle --&gt; Active : TransactionsDelegated
+    Observing --&gt; Idle : HeartbeatInterval [InactiveGracePeriodExceeded]
+    Observing --&gt; Elect : TransactionsDelegated [IsHigherPriorityThanCurrentActive]
+    Elect --&gt; Active : StateTimeoutInterval
+    Elect --&gt; Observing : HeartbeatReceived [!HasTransactionsInflight]
+    Elect --&gt; Closing_Flush : HeartbeatReceived [HasTransactionsInflight &amp;&amp; HasUnconfirmedDispatchedTransactions]
+    Elect --&gt; Closing : HeartbeatReceived [HasTransactionsInflight &amp;&amp; !HasUnconfirmedDispatchedTransactions]
+    Elect --&gt; Closing_Flush : HandoverRequest [HasUnconfirmedDispatchedTransactions]
+    Elect --&gt; Closing : HandoverRequest [!HasUnconfirmedDispatchedTransactions]
+    Elect --&gt; Observing : EndorsementRequestReceived [!HasTransactionsInflight]
+    Elect --&gt; Closing_Flush : EndorsementRequestReceived [HasTransactionsInflight &amp;&amp; HasUnconfirmedDispatchedTransactions]
+    Elect --&gt; Closing : EndorsementRequestReceived [HasTransactionsInflight &amp;&amp; !HasUnconfirmedDispatchedTransactions]
+    Prepared --&gt; Active : HeartbeatInterval [InactiveGracePeriodExceeded]
+    Prepared --&gt; Active : HeartbeatReceived
+    Prepared --&gt; Closing_Flush : HandoverRequest [HasUnconfirmedDispatchedTransactions]
+    Prepared --&gt; Closing : HandoverRequest [!HasUnconfirmedDispatchedTransactions]
+    Prepared --&gt; Observing : EndorsementRequestReceived [!HasTransactionsInflight]
+    Prepared --&gt; Closing_Flush : EndorsementRequestReceived [HasTransactionsInflight &amp;&amp; HasUnconfirmedDispatchedTransactions]
+    Prepared --&gt; Closing : EndorsementRequestReceived [HasTransactionsInflight &amp;&amp; !HasUnconfirmedDispatchedTransactions]
+    Active --&gt; Idle : HeartbeatInterval [!HasTransactionsInflight]
+    Active --&gt; Closing_Flush : HeartbeatReceived [HasUnconfirmedDispatchedTransactions]
+    Active --&gt; Closing : HeartbeatReceived [!HasUnconfirmedDispatchedTransactions]
+    Active --&gt; Closing_Flush : HandoverRequest [HasUnconfirmedDispatchedTransactions]
+    Active --&gt; Closing : HandoverRequest [!HasUnconfirmedDispatchedTransactions]
+    Active --&gt; Closing_Flush : EndorsementRequestReceived [HasUnconfirmedDispatchedTransactions]
+    Active --&gt; Closing : EndorsementRequestReceived [!HasUnconfirmedDispatchedTransactions]
+    Active --&gt; Active_Flush : EpochBoundaryReached [MustFlushToRotateSigningIdentity]
+    Active_Flush --&gt; Closing_Flush : HeartbeatReceived
+    Active_Flush --&gt; Closing_Flush : HandoverRequest [HasUnconfirmedDispatchedTransactions]
+    Active_Flush --&gt; Closing : HandoverRequest [!HasUnconfirmedDispatchedTransactions]
+    Active_Flush --&gt; Closing_Flush : EndorsementRequestReceived
+    Active_Flush --&gt; Active : TransactionStateTransition [!HasUnconfirmedDispatchedTransactions]
+    Closing_Flush --&gt; Elect : TransactionsDelegated [IsHigherPriorityThanCurrentActive]
+    Closing_Flush --&gt; Closing : TransactionStateTransition [!HasUnconfirmedDispatchedTransactions]
+    Closing --&gt; Idle : HeartbeatInterval [statemachine.GuardAnd(
+                                statemachine.GuardNot(guard_HasTransactionsInflight),
+                                guard_ClosingGracePeriodExpired,
+                                guard_InactiveGracePeriodExceeded,
+                            )]
+    Closing --&gt; Observing : HeartbeatInterval [statemachine.GuardAnd(
+                                statemachine.GuardNot(guard_HasTransactionsInflight),
+                                guard_ClosingGracePeriodExpired,
+                                statemachine.GuardNot(guard_InactiveGracePeriodExceeded),
+                            )]
+    Closing --&gt; Elect : TransactionsDelegated [statemachine.GuardAnd(
+                                guard_IsHigherPriorityThanCurrentActive,
+                                statemachine.GuardNot(guard_InactiveGracePeriodExceeded),
+                            )]
+    Closing --&gt; Active : TransactionsDelegated [statemachine.GuardAnd(
+                                statemachine.GuardNot(guard_IsHigherPriorityThanCurrentActive),
+                                guard_InactiveGracePeriodExceeded,
+                            )]</code></pre><div class="panzoom-info-box panzoom-hidden">Press "Alt" / "Option" to enable Pan &amp; Zoom</div></div>
+<h3 id="transition-events">Transition Events<a class="headerlink" href="#transition-events" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CoordinatorCreated</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TransactionsDelegated</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>StateTimeoutInterval</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>HandoverRequest</strong></td>
+<td>pushed by transport_client when a CoordinatorHandoverRequest message is received from a higher-priority node</td>
+</tr>
+<tr>
+<td><strong>EndorsementRequestReceived</strong></td>
+<td>pushed by transport_client when an EndorsementRequest message arrives for this coordinator</td>
+</tr>
+<tr>
+<td><strong>EpochBoundaryReached</strong></td>
+<td>queued internally by getAndRefreshBlockHeight when the effective block height advances to a new epoch</td>
+</tr>
+<tr>
+<td><strong>HeartbeatInterval</strong></td>
+<td>(shared event from sequencer common package)</td>
+</tr>
+<tr>
+<td><strong>HeartbeatReceived</strong></td>
+<td>(shared event from sequencer common package)</td>
+</tr>
+<tr>
+<td><strong>TransactionStateTransition</strong></td>
+<td>(shared event from sequencer common package)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="coordinator-transaction-state-machine">Coordinator Transaction State Machine<a class="headerlink" href="#coordinator-transaction-state-machine" title="Permanent link">¶</a></h2>
+<div class="panzoom-box" data-key="alt" id="panzoom1" oncontextmenu="return false;"><nav class="panzoom-top-nav"><button class="panzoom-info panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3l58.3 0c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24l0-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1l-58.3 0c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></button><button class="panzoom-reset panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"></path></svg></button><button class="panzoom-max panzoom-button"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z"></path></svg></button><button class="panzoom-min panzoom-button panzoom-hidden"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 320c-17.7 0-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0z"></path></svg></button></nav><pre class="mermaid"><code>%%{init: {'themeVariables': {'background': 'transparent'}}}%%
+stateDiagram-v2
+    direction LR
+    state "PreAssembly Blocked" as PreAssembly_Blocked
+    state "Endorsement Gathering" as Endorsement_Gathering
+    state "Confirming Dispatchable" as Confirming_Dispatchable
+    state "Ready For Dispatch" as Ready_For_Dispatch
+    [*] --&gt; Initial
+    Initial --&gt; Reverted : Delegated [HasRevertedChainedDependency]
+    Initial --&gt; Evicted : Delegated [HasEvictedChainedDependency]
+    Initial --&gt; PreAssembly_Blocked : Delegated [HasUnassembledDependencies]
+    Initial --&gt; Pooled : Delegated [!HasUnassembledDependencies]
+    PreAssembly_Blocked --&gt; Pooled : DependencySelectedForAssemble [!HasUnassembledDependencies]
+    PreAssembly_Blocked --&gt; Pooled : PreAssembleDependencyTerminated [!HasUnassembledDependencies]
+    PreAssembly_Blocked --&gt; Reverted : ChainedDependencyFailed
+    PreAssembly_Blocked --&gt; Evicted : ChainedDependencyEvicted
+    Pooled --&gt; Assembling : Selected
+    Pooled --&gt; PreAssembly_Blocked : DependencyReset
+    Pooled --&gt; PreAssembly_Blocked : DependencyConfirmedReverted
+    Pooled --&gt; Reverted : ChainedDependencyFailed
+    Pooled --&gt; Evicted : ChainedDependencyEvicted
+    Assembling --&gt; Endorsement_Gathering : AssembleSuccess [!AttestationPlanFulfilled]
+    Assembling --&gt; Confirming_Dispatchable : AssembleSuccess [AttestationPlanFulfilled &amp;&amp; !HasDependenciesNotReady]
+    Assembling --&gt; Blocked : AssembleSuccess [AttestationPlanFulfilled &amp;&amp; HasDependenciesNotReady]
+    Assembling --&gt; Pooled : StateTimeoutInterval
+    Assembling --&gt; Pooled : AssembleCancelled
+    Assembling --&gt; Reverted : AssembleRevert
+    Assembling --&gt; Pooled : AssembleError [CanRetryErroredAssemble]
+    Assembling --&gt; Evicted : AssembleError [!CanRetryErroredAssemble]
+    Assembling --&gt; Pooled : AssembleRequestRejected
+    Assembling --&gt; PreAssembly_Blocked : DependencyReset
+    Assembling --&gt; PreAssembly_Blocked : DependencyConfirmedReverted
+    Assembling --&gt; Reverted : ChainedDependencyFailed
+    Assembling --&gt; Evicted : ChainedDependencyEvicted
+    Endorsement_Gathering --&gt; Confirming_Dispatchable : Endorsed [AttestationPlanFulfilled &amp;&amp; !HasDependenciesNotReady]
+    Endorsement_Gathering --&gt; Blocked : Endorsed [AttestationPlanFulfilled &amp;&amp; HasDependenciesNotReady]
+    Endorsement_Gathering --&gt; Pooled : EndorseRevert [EndorseFailureExceedsTolerance]
+    Endorsement_Gathering --&gt; Pooled : EndorseError [EndorseFailureExceedsTolerance]
+    Endorsement_Gathering --&gt; Pooled : EndorseRequestRejected [EndorseFailureExceedsTolerance]
+    Endorsement_Gathering --&gt; Pooled : StateTimeoutInterval
+    Endorsement_Gathering --&gt; PreAssembly_Blocked : DependencyReset
+    Endorsement_Gathering --&gt; PreAssembly_Blocked : DependencyConfirmedReverted
+    Endorsement_Gathering --&gt; Reverted : ChainedDependencyFailed
+    Blocked --&gt; Confirming_Dispatchable : DependencyReady [!HasDependenciesNotReady]
+    Blocked --&gt; PreAssembly_Blocked : DependencyReset
+    Blocked --&gt; PreAssembly_Blocked : DependencyConfirmedReverted
+    Blocked --&gt; Reverted : ChainedDependencyFailed
+    Confirming_Dispatchable --&gt; Ready_For_Dispatch : DispatchRequestApproved
+    Confirming_Dispatchable --&gt; Pooled : DispatchRequestRejected
+    Confirming_Dispatchable --&gt; Evicted : PreDispatchRequestRejected
+    Confirming_Dispatchable --&gt; Pooled : StateTimeoutInterval
+    Confirming_Dispatchable --&gt; PreAssembly_Blocked : DependencyReset
+    Confirming_Dispatchable --&gt; PreAssembly_Blocked : DependencyConfirmedReverted
+    Confirming_Dispatchable --&gt; Reverted : ChainedDependencyFailed
+    Ready_For_Dispatch --&gt; Dispatched : Dispatched
+    Ready_For_Dispatch --&gt; PreAssembly_Blocked : DependencyReset
+    Ready_For_Dispatch --&gt; PreAssembly_Blocked : DependencyConfirmedReverted
+    Ready_For_Dispatch --&gt; Reverted : ChainedDependencyFailed
+    Dispatched --&gt; Confirmed : ConfirmedSuccess
+    Dispatched --&gt; PreAssembly_Blocked : ConfirmedReverted [CanRetryRevert &amp;&amp; HasUnassembledDependencies]
+    Dispatched --&gt; Pooled : ConfirmedReverted [CanRetryRevert &amp;&amp; !HasUnassembledDependencies]
+    Dispatched --&gt; Reverted : ConfirmedReverted [!CanRetryRevert]
+    Dispatched --&gt; Reverted : ChainedDependencyFailed
+    Reverted --&gt; Final : HeartbeatInterval [HasFinalizingGracePeriodPassedSinceStateChange]
+    Confirmed --&gt; Final : HeartbeatInterval [HasFinalizingGracePeriodPassedSinceStateChange]
+    Final --&gt; [*]
+    Evicted --&gt; [*]</code></pre><div class="panzoom-info-box panzoom-hidden">Press "Alt" / "Option" to enable Pan &amp; Zoom</div></div>
+<h3 id="transition-events_1">Transition Events<a class="headerlink" href="#transition-events_1" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Delegated</strong></td>
+<td>Transaction initially received by the coordinator.  Might seem redundant explicitly modeling this as an event rather than putting this logic into the constructor, but it is useful to make the initial state transition rules explicit in the state machine definitions</td>
+</tr>
+<tr>
+<td><strong>DependencySelectedForAssemble</strong></td>
+<td>the transaction delegated immediately before the transaction from the same originator has been selected for assembly</td>
+</tr>
+<tr>
+<td><strong>Selected</strong></td>
+<td>selected from the pool as the next transaction to be assembled</td>
+</tr>
+<tr>
+<td><strong>AssembleSuccess</strong></td>
+<td>assembler returned a successful assembly</td>
+</tr>
+<tr>
+<td><strong>AssembleRevert</strong></td>
+<td>assembler returned a revert (domain said assembly is invalid)</td>
+</tr>
+<tr>
+<td><strong>AssembleError</strong></td>
+<td>assembler returned an unexpected error</td>
+</tr>
+<tr>
+<td><strong>AssembleRequestRejected</strong></td>
+<td>originator rejected the assemble request (e.g. block height tolerance exceeded)</td>
+</tr>
+<tr>
+<td><strong>AssembleCancelled</strong></td>
+<td>the assemble attempt has been cancelled</td>
+</tr>
+<tr>
+<td><strong>Endorsed</strong></td>
+<td>endorsement received from one endorser</td>
+</tr>
+<tr>
+<td><strong>EndorseRevert</strong></td>
+<td>endorser responded that the assembly is invalid (domain REVERT)</td>
+</tr>
+<tr>
+<td><strong>EndorseError</strong></td>
+<td>endorser encountered an unexpected error processing the request</td>
+</tr>
+<tr>
+<td><strong>EndorseRequestRejected</strong></td>
+<td>endorser rejected the request before processing (e.g. block height tolerance)</td>
+</tr>
+<tr>
+<td><strong>DependencyReady</strong></td>
+<td>another transaction, for which this transaction has a dependency on, has become ready for dispatch</td>
+</tr>
+<tr>
+<td><strong>DependencyReset</strong></td>
+<td>another transaction, for which this transaction has a dependency on, has been reset</td>
+</tr>
+<tr>
+<td><strong>DependencyConfirmedReverted</strong></td>
+<td>another transaction, for which this transaction has a dependency on, has been confirmed as reverted</td>
+</tr>
+<tr>
+<td><strong>DispatchRequestApproved</strong></td>
+<td>dispatch confirmation received from the originator</td>
+</tr>
+<tr>
+<td><strong>DispatchRequestRejected</strong></td>
+<td>dispatch confirmation response received from the originator with a rejection</td>
+</tr>
+<tr>
+<td><strong>Dispatched</strong></td>
+<td>dispatched to the public TX manager</td>
+</tr>
+<tr>
+<td><strong>ConfirmedSuccess</strong></td>
+<td>confirmation received from the blockchain of a successful transaction</td>
+</tr>
+<tr>
+<td><strong>ConfirmedReverted</strong></td>
+<td>confirmation received from the blockchain of a reverted transaction</td>
+</tr>
+<tr>
+<td><strong>StateTimeoutInterval</strong></td>
+<td>event emitted when a state has exceeded its maximum allowed duration</td>
+</tr>
+<tr>
+<td><strong>PreDispatchRequestRejected</strong></td>
+<td>originator has rejected the pre-dispatch request (NOT_CURRENT_DELEGATE or TRANSACTION_UNKNOWN)</td>
+</tr>
+<tr>
+<td><strong>ChainedDependencyFailed</strong></td>
+<td>a chained (same-coordinator) dependency has been permanently finalized as failed</td>
+</tr>
+<tr>
+<td><strong>ChainedDependencyEvicted</strong></td>
+<td>a chained (same-coordinator) dependency has been evicted (e.g. assembly failure threshold exceeded)</td>
+</tr>
+<tr>
+<td><strong>PreAssembleDependencyTerminated</strong></td>
+<td>the pre-assemble (FIFO ordering) predecessor has reached a terminal state</td>
+</tr>
+<tr>
+<td><strong>HeartbeatInterval</strong></td>
+<td>(shared event from sequencer common package)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="originator-state-machine">Originator State Machine<a class="headerlink" href="#originator-state-machine" title="Permanent link">¶</a></h2>
+<div class="panzoom-box" data-key="alt" id="panzoom2" oncontextmenu="return false;"><nav class="panzoom-top-nav"><button class="panzoom-info panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3l58.3 0c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24l0-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1l-58.3 0c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></button><button class="panzoom-reset panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"></path></svg></button><button class="panzoom-max panzoom-button"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z"></path></svg></button><button class="panzoom-min panzoom-button panzoom-hidden"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 320c-17.7 0-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0z"></path></svg></button></nav><pre class="mermaid"><code>%%{init: {'themeVariables': {'background': 'transparent'}}}%%
+stateDiagram-v2
+    direction LR
+    [*] --&gt; Initial
+    Initial --&gt; Idle : OriginatorCreated
+    Idle --&gt; Observing : HeartbeatReceived
+    Idle --&gt; Sending : TransactionCreated
+    Observing --&gt; Idle : HeartbeatInterval [InactiveGracePeriodExceeded]
+    Observing --&gt; Sending : TransactionCreated
+    Sending --&gt; Observing : TransactionStateTransition [!HasTransactions]</code></pre><div class="panzoom-info-box panzoom-hidden">Press "Alt" / "Option" to enable Pan &amp; Zoom</div></div>
+<h3 id="transition-events_2">Transition Events<a class="headerlink" href="#transition-events_2" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OriginatorCreated</strong></td>
+<td>fired once by Start to drive the initial coordinator selection</td>
+</tr>
+<tr>
+<td><strong>TransactionCreated</strong></td>
+<td>a new transaction has been created and is ready to be sent to the coordinator TODO maybe name something like Intent created?</td>
+</tr>
+<tr>
+<td><strong>HeartbeatInterval</strong></td>
+<td>(shared event from sequencer common package)</td>
+</tr>
+<tr>
+<td><strong>HeartbeatReceived</strong></td>
+<td>(shared event from sequencer common package)</td>
+</tr>
+<tr>
+<td><strong>TransactionStateTransition</strong></td>
+<td>(shared event from sequencer common package)</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="originator-transaction-state-machine">Originator Transaction State Machine<a class="headerlink" href="#originator-transaction-state-machine" title="Permanent link">¶</a></h2>
+<div class="panzoom-box" data-key="alt" id="panzoom3" oncontextmenu="return false;"><nav class="panzoom-top-nav"><button class="panzoom-info panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3l58.3 0c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24l0-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1l-58.3 0c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path></svg></button><button class="panzoom-reset panzoom-button"><svg class="panzoom-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"></path></svg></button><button class="panzoom-max panzoom-button"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M32 32C14.3 32 0 46.3 0 64l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96z"></path></svg></button><button class="panzoom-min panzoom-button panzoom-hidden"><svg class="panzoom-icon" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 64-64 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0c17.7 0 32-14.3 32-32l0-96zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32l64 0 0 64c0 17.7 14.3 32 32 32s32-14.3 32-32l0-96c0-17.7-14.3-32-32-32l-96 0zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32l96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0 0-64zM320 320c-17.7 0-32 14.3-32 32l0 96c0 17.7 14.3 32 32 32s32-14.3 32-32l0-64 64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0z"></path></svg></button></nav><pre class="mermaid"><code>%%{init: {'themeVariables': {'background': 'transparent'}}}%%
+stateDiagram-v2
+    direction LR
+    state "Endorsement Gathering" as Endorsement_Gathering
+    [*] --&gt; Initial
+    Initial --&gt; Confirmed : ConfirmedSuccess
+    Initial --&gt; Pending : Created
+    Pending --&gt; Confirmed : ConfirmedSuccess
+    Pending --&gt; Delegated : Delegated
+    Delegated --&gt; Confirmed : ConfirmedSuccess
+    Delegated --&gt; Assembling : AssembleRequestReceived
+    Delegated --&gt; Dispatched : Dispatched
+    Assembling --&gt; Confirmed : ConfirmedSuccess
+    Assembling --&gt; Delegated : Delegated
+    Assembling --&gt; Endorsement_Gathering : AssembleAndSignSuccess
+    Assembling --&gt; Reverted : AssembleRevert
+    Assembling --&gt; Parked : AssemblePark
+    Assembling --&gt; Delegated : AssembleError
+    Endorsement_Gathering --&gt; Confirmed : ConfirmedSuccess
+    Endorsement_Gathering --&gt; Delegated : Delegated
+    Endorsement_Gathering --&gt; Assembling : AssembleRequestReceived [!AssembleRequestMatchesPreviousResponse]
+    Endorsement_Gathering --&gt; Prepared : PreDispatchRequestReceived
+    Prepared --&gt; Confirmed : ConfirmedSuccess
+    Prepared --&gt; Delegated : Delegated
+    Prepared --&gt; Dispatched : Dispatched
+    Prepared --&gt; Assembling : AssembleRequestReceived [!AssembleRequestMatchesPreviousResponse]
+    Dispatched --&gt; Confirmed : ConfirmedSuccess
+    Dispatched --&gt; Delegated : ConfirmedReverted [WillRetry]
+    Dispatched --&gt; Confirmed : ConfirmedReverted [!WillRetry]
+    Dispatched --&gt; Delegated : Delegated
+    Dispatched --&gt; Sequenced : NonceAssigned
+    Dispatched --&gt; Submitted : Submitted
+    Dispatched --&gt; Assembling : AssembleRequestReceived
+    Sequenced --&gt; Confirmed : ConfirmedSuccess
+    Sequenced --&gt; Delegated : ConfirmedReverted [WillRetry]
+    Sequenced --&gt; Confirmed : ConfirmedReverted [!WillRetry]
+    Sequenced --&gt; Delegated : Delegated
+    Sequenced --&gt; Submitted : Submitted
+    Sequenced --&gt; Assembling : AssembleRequestReceived
+    Submitted --&gt; Confirmed : ConfirmedSuccess
+    Submitted --&gt; Delegated : ConfirmedReverted [WillRetry]
+    Submitted --&gt; Confirmed : ConfirmedReverted [!WillRetry]
+    Submitted --&gt; Delegated : Delegated
+    Submitted --&gt; Assembling : AssembleRequestReceived
+    Parked --&gt; Confirmed : ConfirmedSuccess
+    Parked --&gt; Delegated : Delegated
+    Parked --&gt; Pending : Resumed
+    Confirmed --&gt; Final : Finalize
+    Reverted --&gt; Final : Finalize
+    Final --&gt; [*]</code></pre><div class="panzoom-info-box panzoom-hidden">Press "Alt" / "Option" to enable Pan &amp; Zoom</div></div>
+<h3 id="transition-events_3">Transition Events<a class="headerlink" href="#transition-events_3" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Created</strong></td>
+<td>Transaction initially received by the originator or has been loaded from the database after a restart / swap-in</td>
+</tr>
+<tr>
+<td><strong>ConfirmedSuccess</strong></td>
+<td>confirmation received from the blockchain of base ledge transaction successful completion</td>
+</tr>
+<tr>
+<td><strong>ConfirmedReverted</strong></td>
+<td>confirmation received from the blockchain of base ledge transaction failure</td>
+</tr>
+<tr>
+<td><strong>Delegated</strong></td>
+<td>transaction has been delegated to a coordinator</td>
+</tr>
+<tr>
+<td><strong>AssembleRequestReceived</strong></td>
+<td>coordinator has requested that we assemble the transaction</td>
+</tr>
+<tr>
+<td><strong>AssembleAndSignSuccess</strong></td>
+<td>we have successfully assembled the transaction and signing module has signed the assembled transaction</td>
+</tr>
+<tr>
+<td><strong>AssembleRevert</strong></td>
+<td>we have failed to assemble the transaction</td>
+</tr>
+<tr>
+<td><strong>AssemblePark</strong></td>
+<td>we have parked the transaction</td>
+</tr>
+<tr>
+<td><strong>AssembleError</strong></td>
+<td>an unexpected error occurred while trying to assemble the transaction</td>
+</tr>
+<tr>
+<td><strong>Dispatched</strong></td>
+<td>coordinator has dispatched the transaction to a public transaction manager</td>
+</tr>
+<tr>
+<td><strong>PreDispatchRequestReceived</strong></td>
+<td>coordinator has requested confirmation that the transaction is OK to be dispatched</td>
+</tr>
+<tr>
+<td><strong>Resumed</strong></td>
+<td>Received an RPC call to resume a parked transaction</td>
+</tr>
+<tr>
+<td><strong>NonceAssigned</strong></td>
+<td>the public transaction manager has assigned a nonce to the transaction</td>
+</tr>
+<tr>
+<td><strong>Submitted</strong></td>
+<td>the transaction has been submitted to the blockchain</td>
+</tr>
+<tr>
+<td><strong>Finalize</strong></td>
+<td>internal event to trigger transition from terminal states (Confirmed/Reverted) to State_Final for cleanup</td>
+</tr>
+</tbody>
+</table>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
 </div>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Advanced Cryptography" class="md-footer__link md-footer__link--prev" href="../advanced_crypto/">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-</div>
-<div class="md-footer__title">
-<span class="md-footer__direction">
-                Previous
-              </span>
-<div class="md-ellipsis">
-                Advanced Cryptography
-              </div>
-</div>
-</a>
-<a aria-label="Next: Full Enterprise Privacy Stack" class="md-footer__link md-footer__link--next" href="../full_stack/">
-<div class="md-footer__title">
-<span class="md-footer__direction">
-                Next
-              </span>
-<div class="md-ellipsis">
-                Full Enterprise Privacy Stack
-              </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
