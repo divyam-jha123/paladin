@@ -411,4 +411,32 @@ class PrivacyGroupTypesTest {
   void publicTxOptionsOmitsEverythingWhenEmpty() throws Exception {
     assertEquals("{}", MAPPER.writeValueAsString(PublicTxOptions.builder().build()));
   }
+
+  @Test
+  void privacyGroupInputDefaultsAbsentCollectionsToEmpty() throws Exception {
+    final PrivacyGroupInput input =
+        MAPPER.readValue("{\"domain\":\"pente\"}", PrivacyGroupInput.class);
+
+    assertEquals("pente", input.domain());
+    assertTrue(input.members().isEmpty());
+    assertTrue(input.properties().isEmpty());
+    assertTrue(input.configuration().isEmpty());
+    assertNull(input.name());
+    assertNull(input.transactionOptions());
+    assertEquals("{\"domain\":\"pente\",\"members\":[]}", MAPPER.writeValueAsString(input));
+  }
+
+  @Test
+  void messageListenerKeepsNonZeroCreatedTimestamp() throws Exception {
+    final PrivacyGroupMessageListener listener =
+        MAPPER.readValue(
+            "{\"name\":\"l1\",\"created\":\"2024-01-01T00:00:00Z\",\"started\":true}",
+            PrivacyGroupMessageListener.class);
+
+    assertEquals(Timestamp.fromString("2024-01-01T00:00:00Z"), listener.created());
+    assertTrue(listener.started());
+    final PrivacyGroupMessageListener reparsed =
+        MAPPER.readValue(MAPPER.writeValueAsString(listener), PrivacyGroupMessageListener.class);
+    assertEquals(listener.created(), reparsed.created());
+  }
 }
