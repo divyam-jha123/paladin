@@ -196,4 +196,33 @@ class StateStoreTypesTest {
     assertTrue(serialized.indexOf("confirmed") < 0);
     assertTrue(serialized.indexOf("contractAddress") < 0);
   }
+
+  @Test
+  void stateStatusQualifierResolvesEveryStandardToken() {
+    assertEquals(StateStatusQualifier.CONFIRMED, StateStatusQualifier.fromString("confirmed"));
+    assertEquals(StateStatusQualifier.UNCONFIRMED, StateStatusQualifier.fromString("UNCONFIRMED"));
+    assertEquals(StateStatusQualifier.ALL, StateStatusQualifier.fromString("All"));
+    assertEquals(StateStatusQualifier.AVAILABLE, StateStatusQualifier.fromString("available"));
+    assertEquals(StateStatusQualifier.SPENT, StateStatusQualifier.fromString("spent"));
+  }
+
+  @Test
+  void stateRecordsAreEqualToThemselves() {
+    final UUID txId = UUID.fromString(TX);
+    final StateConfirmRecord confirmed = new StateConfirmRecord(txId);
+    final StateReadRecord read = new StateReadRecord(txId);
+    final StateSpendRecord spent = new StateSpendRecord(txId);
+    final StateLock lock = new StateLock(txId, StateLockType.CREATE);
+    final StateNullifier nullifier = new StateNullifier(HexBytes.fromString("0xbb"), spent);
+
+    assertEquals(confirmed, confirmed);
+    assertEquals(read, read);
+    assertEquals(spent, spent);
+    assertEquals(lock, lock);
+    assertEquals(nullifier, nullifier);
+
+    assertNotEquals(lock, new StateLock(txId, StateLockType.SPEND));
+    assertNotEquals(nullifier, new StateNullifier(HexBytes.fromString("0xcc"), spent));
+    assertNotEquals(confirmed, new StateConfirmRecord(UUID.randomUUID()));
+  }
 }
